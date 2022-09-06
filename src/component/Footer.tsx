@@ -1,5 +1,5 @@
 export default () => (
-  <footer pt-12 font-mono text-gray>
+  <footer font-mono text-gray>
     <p>
       <span>Inspired by </span>
       <a text-sky href="https://tin.ddiu.io">tin.ddiu.io</a>
