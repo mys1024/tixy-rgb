@@ -24,7 +24,7 @@ export default () => {
           tixyFn={fn()}
         />
       </div>
-      <pre>
+      <pre font-mono>
         { intro() }
       </pre>
       <Footer />
