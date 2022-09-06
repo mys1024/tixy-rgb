@@ -1,0 +1,4 @@
+{
+  "plugins": ["solid"],
+  "extends": ["@antfu/ts", "plugin:solid/typescript"]
+}
