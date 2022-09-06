@@ -16,7 +16,7 @@ const intro = () => module().intro
 export default () => (
   <div
     min-h-100vh
-    bg="#282c34"
+    bg-black
     text-white
   >
     <div
