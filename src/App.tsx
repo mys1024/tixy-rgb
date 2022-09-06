@@ -8,7 +8,8 @@ for await (const module of Object.values(import.meta.glob<TixyFnModule>('~/fn/*.
   tixyFnModules.push(module)
 
 const [idx, setIdx] = createSignal(0)
-const module = () => tixyFnModules[idx() % tixyFnModules.length]
+const toggle = () => setIdx((idx() + 1) % tixyFnModules.length)
+const module = () => tixyFnModules[idx()]
 const fn = () => module().fn
 const intro = () => module().intro
 
@@ -25,12 +26,17 @@ export default () => {
         flex flex-col
         items-center
       >
-        <div onClick={() => setIdx(idx() + 1)}>
+        <div onClick={toggle}>
           <Renderer
             tixyFn={fn()}
           />
         </div>
-        <pre font-mono>
+        <pre
+          max-w-full
+          p-4
+          overflow-auto
+          font-mono
+        >
           { intro() }
         </pre>
         <div pt-12 opacity-85>
