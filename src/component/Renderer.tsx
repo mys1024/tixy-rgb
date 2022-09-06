@@ -4,7 +4,8 @@ import { For, createMemo, createSignal } from 'solid-js'
 import type { TixyFn } from '~/type'
 
 function uint8(num: number) {
-  return Math.abs(num % 256)
+  num %= 256
+  return num < 0 ? num + 256 : num
 }
 
 function useTimestamp(interval = 13) {
