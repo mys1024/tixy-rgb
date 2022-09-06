@@ -5,7 +5,7 @@ export default () => (
       <a text-sky href="https://tixy.land">tixy.land</a>
       <span> & </span>
       <a text-sky href="https://tin.ddiu.io">tin.ddiu.io</a>
-      <span> & My </span>
+      <span> & my </span>
       <span text-red>R</span><span text-green>G</span><span text-blue>B</span>
       <span> keyboard</span>
     </p>
