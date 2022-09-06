@@ -1,17 +1,3 @@
-# Solidify
+# tixy-rgba
 
-A SolidJS stater template.
-
-## Feature
-
-- pnpm
-
-- Vite
-
-- TypeScript
-
-- UnoCSS
-
-- ESLint
-
-- Vitest
+Inspired by [Tixy.land](https://tixy.land)

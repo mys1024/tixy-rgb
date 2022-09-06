@@ -4,7 +4,9 @@
     "source.fixAll.eslint": true
   },
   "cSpell.words": [
+    "rgba",
     "solidjs",
-    "taze"
+    "taze",
+    "tixy"
   ]
 }
