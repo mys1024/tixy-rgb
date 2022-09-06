@@ -39,7 +39,7 @@ export default () => {
         >
           { intro() }
         </pre>
-        <div pt-12 opacity-85>
+        <div pt-12>
           <Footer />
         </div>
       </div>
