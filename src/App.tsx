@@ -13,36 +13,34 @@ const module = () => tixyFnModules[idx()]
 const fn = () => module().fn
 const intro = () => module().intro
 
-export default () => {
-  return (
+export default () => (
+  <div
+    min-h-100vh
+    bg="#282c34"
+    text-white
+  >
     <div
-      min-h-100vh
-      bg="#282c34"
-      text-white
+      p-4 pt-12
+      space-y-12
+      flex flex-col
+      items-center
     >
-      <div
-        p-4 pt-12
-        space-y-12
-        flex flex-col
-        items-center
+      <div onClick={toggle}>
+        <Renderer
+          tixyFn={fn()}
+        />
+      </div>
+      <pre
+        max-w-full
+        p-4
+        overflow-auto
+        font-mono
       >
-        <div onClick={toggle}>
-          <Renderer
-            tixyFn={fn()}
-          />
-        </div>
-        <pre
-          max-w-full
-          p-4
-          overflow-auto
-          font-mono
-        >
-          { intro() }
-        </pre>
-        <div pt-12>
-          <Footer />
-        </div>
+        { intro() }
+      </pre>
+      <div pt-12>
+        <Footer />
       </div>
     </div>
-  )
-}
+  </div>
+)

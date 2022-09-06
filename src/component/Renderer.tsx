@@ -40,15 +40,7 @@ const Renderer: Component<{ tixyFn: TixyFn }> = (props) => {
   return (
     <div grid gap-2px grid-cols-16 grid-rows-16>
       <For each={colors}>
-        {color => (
-          <div
-            w-4 h-4
-            rounded-full
-            style={{
-              'background-color': color(),
-            }}
-          />
-        )}
+        {color => <div w-4 h-4 rounded-full style={{ 'background-color': color() }} />}
       </For>
     </div>
   )
