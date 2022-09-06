@@ -24,7 +24,7 @@ function useColors(tixyFn: Accessor<TixyFn>, row = 16, col = 16) {
   const colors: Accessor<string>[] = new Array(count)
   for (let i = 0; i < count; i++) {
     const x = i % col
-    const y = Math.floor(i / row)
+    const y = Math.floor(i / col)
     colors[i] = createMemo(
       () => {
         const [r, g, b, a] = tixyFn()(t(), i, x, y)
