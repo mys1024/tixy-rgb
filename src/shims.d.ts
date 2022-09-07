@@ -12,8 +12,9 @@ declare global {
   const sin: typeof Math.sin
   const cos: typeof Math.cos
   const tan: typeof Math.tan
-  const pow: typeof Math.pow
   const exp: typeof Math.exp
+  const pow: typeof Math.pow
+  const sqrt: typeof Math.sqrt
   const log: typeof Math.log
   const abs: typeof Math.abs
   const floor: typeof Math.floor

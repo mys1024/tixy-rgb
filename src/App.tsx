@@ -4,7 +4,7 @@ import Footer from '~/component/Footer'
 import type { TixyFnModule } from '~/types'
 
 const tixyFnModules: TixyFnModule[] = []
-for await (const module of Object.values(import.meta.glob<TixyFnModule>('~/fn/*.tsx')).map(i => i()))
+for await (const module of Object.values(import.meta.glob<TixyFnModule>('~/fn/*.ts')).map(i => i()))
   tixyFnModules.push(module)
 
 const [idx, setIdx] = createSignal(0)
