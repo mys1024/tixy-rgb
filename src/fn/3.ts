@@ -1,23 +1,23 @@
 import type { TixyFn } from '~/types'
 
 export const fn: TixyFn = (t, i, x, y) => {
-  const z1 = 0.2 * sqrt((x - 7) ** 2 + (y - 7) ** 2) - t / 500
-  const z2 = 0.2 * sqrt((x - 7) ** 2 + (y - 8) ** 2) - t / 500
-  const z3 = 0.2 * sqrt((x - 8) ** 2 + (y - 7) ** 2) - t / 500
-  const z4 = 0.2 * sqrt((x - 8) ** 2 + (y - 8) ** 2) - t / 500
-  const r = 128 + 32 * (sin(z1) + sin(z2) + sin(z3) + sin(z4))
-  const g = 0
-  const b = 0
-  return rgb(r, g, b)
+  const p = (a: number, b: number) =>
+    hypot(x - a, y - b) / 5 - t / 500
+  let r = 0
+  r += sin(p(7, 7))
+  r += sin(p(7, 8))
+  r += sin(p(8, 7))
+  r += sin(p(8, 8))
+  return rgbPm1(r / 4, -1, -1)
 }
 
 export const intro = `(t, i, x, y) => {
-  const z1 = 0.2 * sqrt((x - 7) ** 2 + (y - 7) ** 2) - t / 500
-  const z2 = 0.2 * sqrt((x - 7) ** 2 + (y - 8) ** 2) - t / 500
-  const z3 = 0.2 * sqrt((x - 8) ** 2 + (y - 7) ** 2) - t / 500
-  const z4 = 0.2 * sqrt((x - 8) ** 2 + (y - 8) ** 2) - t / 500
-  const r = 128 + 32 * (sin(z1) + sin(z2) + sin(z3) + sin(z4))
-  const g = 0
-  const b = 0
-  return rgb(r, g, b)
+  const p = (a, b) =>
+    hypot(x - a, y - b) / 5 - t / 500
+  let r = 0
+  r += sin(p(7, 7))
+  r += sin(p(7, 8))
+  r += sin(p(8, 7))
+  r += sin(p(8, 8))
+  return rgbPm1(r / 4, -1, -1)
 }`

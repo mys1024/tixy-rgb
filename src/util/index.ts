@@ -14,6 +14,14 @@ export function rgb(r: number, g: number, b: number): number {
   return c
 }
 
+export function rgb01(r: number, g: number, b: number): number {
+  return rgb(256 * r, 256 * g, 256 * b)
+}
+
+export function rgbPm1(r: number, g: number, b: number): number {
+  return rgb(128 + 128 * r, 128 + 128 * g, 128 + 128 * b)
+}
+
 const hexDigits = '0123456789ABCDEF'
 export function toColorStr(rgbVal: number) {
   let s = ''
