@@ -5,7 +5,7 @@ import type { TixyFn } from '~/type'
 
 function uint8(num: number) {
   num %= 256
-  return num < 0 ? num + 256 : num
+  return Math.floor(num < 0 ? num + 256 : num)
 }
 
 function useTimestamp(interval = 13) {
