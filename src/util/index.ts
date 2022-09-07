@@ -7,11 +7,11 @@ export function uint8(num: number) {
   return Math.floor(num < 0 ? num + 256 : num)
 }
 
-export function toColorNum(rgba: [number, number, number, number]): number {
-  let c = 0xFF & uint8(rgba[0])
-  c = (c << 8) | 0xFF & uint8(rgba[1])
-  c = (c << 8) | 0xFF & uint8(rgba[2])
-  c = (c << 8) | 0xFF & uint8(rgba[3])
+export function rgba(r: number, g: number, b: number, a: number): number {
+  let c = 0xFF & uint8(r)
+  c = (c << 8) | 0xFF & uint8(g)
+  c = (c << 8) | 0xFF & uint8(b)
+  c = (c << 8) | 0xFF & uint8(a)
   return c
 }
 

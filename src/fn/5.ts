@@ -10,7 +10,7 @@ export const fn: TixyFn = (t, i, x, y) => {
     : c === 1
       ? g = 255
       : b = 255
-  return [r, g, b, a]
+  return rgba(r, g, b, a)
 }
 
 export const intro = `(t, i, x, y) => {
@@ -22,5 +22,5 @@ export const intro = `(t, i, x, y) => {
     : c === 1
       ? g = 255
       : b = 255
-  return [r, g, b, a]
+  return rgba(r, g, b, a)
 }`

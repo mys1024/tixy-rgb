@@ -1,6 +1,9 @@
+import { rgba } from '~/util'
+
 export function bindUsefulVariables(obj: any) {
   obj.PI = Math.PI
   obj.E = Math.E
+  obj.rgba = rgba
   obj.sin = Math.sin
   obj.cos = Math.cos
   obj.tan = Math.tan

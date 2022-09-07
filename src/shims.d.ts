@@ -1,4 +1,5 @@
 import type { AttributifyAttributes } from '@unocss/preset-attributify'
+import type { rgba as _rgba} from '~/util'
 
 declare module 'solid-js' {
   namespace JSX {
@@ -9,6 +10,7 @@ declare module 'solid-js' {
 declare global {
   const PI: typeof Math.PI
   const E: typeof Math.E
+  const rgba: typeof _rgba
   const sin: typeof Math.sin
   const cos: typeof Math.cos
   const tan: typeof Math.tan
