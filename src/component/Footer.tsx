@@ -21,7 +21,7 @@ export default () => (
       </span>
       <span text-gray opacity-90> / </span>
       <span text-sky opacity="90 hover:100" transition>
-        <a href="https://github.com/mys1024/tixy-rgba">tixy-rgba</a>
+        <a href="https://github.com/mys1024/tixy-rgb">tixy-rgb</a>
       </span>
     </p>
   </footer>

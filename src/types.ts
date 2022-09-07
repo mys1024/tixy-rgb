@@ -1,4 +1,4 @@
-export type TixyFn = (r: number, g: number, b: number, a: number) => number
+export type TixyFn = (t: number, i: number, x: number, y: number) => number
 
 export interface TixyFnModule {
   fn: TixyFn

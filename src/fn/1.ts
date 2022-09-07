@@ -5,8 +5,7 @@ export const fn: TixyFn = (t, i, x, y) => {
   const r = 128 + 128 * sin(z)
   const g = 128 + 128 * sin(z + PI / 2)
   const b = 128 + 128 * sin(z + PI)
-  const a = 255
-  return rgba(r, g, b, a)
+  return rgb(r, g, b)
 }
 
 export const intro = `(t, i, x, y) => {
@@ -14,6 +13,5 @@ export const intro = `(t, i, x, y) => {
   const r = 128 + 128 * sin(z)
   const g = 128 + 128 * sin(z + PI / 2)
   const b = 128 + 128 * sin(z + PI)
-  const a = 255
-  return rgba(r, g, b, a)
+  return rgb(r, g, b)
 }`

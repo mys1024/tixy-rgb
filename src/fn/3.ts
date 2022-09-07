@@ -8,8 +8,7 @@ export const fn: TixyFn = (t, i, x, y) => {
   const r = 128 + 32 * (sin(z1) + sin(z2) + sin(z3) + sin(z4))
   const g = 0
   const b = 0
-  const a = 255
-  return rgba(r, g, b, a)
+  return rgb(r, g, b)
 }
 
 export const intro = `(t, i, x, y) => {
@@ -20,6 +19,5 @@ export const intro = `(t, i, x, y) => {
   const r = 128 + 32 * (sin(z1) + sin(z2) + sin(z3) + sin(z4))
   const g = 0
   const b = 0
-  const a = 255
-  return rgba(r, g, b, a)
+  return rgb(r, g, b)
 }`

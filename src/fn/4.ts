@@ -5,14 +5,12 @@ export const fn: TixyFn = (t, i, x, y) => {
   const r = 256 * random()
   const g = 256 * random()
   const b = 256 * random()
-  const a = 256 * random()
-  return rgba(r, g, b, a)
+  return rgb(r, g, b)
 }
 
 export const intro = `(t, i, x, y) => {
   const r = 256 * random()
   const g = 256 * random()
   const b = 256 * random()
-  const a = 256 * random()
-  return rgba(r, g, b, a)
+  return rgb(r, g, b)
 }`

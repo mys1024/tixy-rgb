@@ -7,20 +7,19 @@ export function uint8(num: number) {
   return Math.floor(num < 0 ? num + 256 : num)
 }
 
-export function rgba(r: number, g: number, b: number, a: number): number {
+export function rgb(r: number, g: number, b: number): number {
   let c = 0xFF & uint8(r)
   c = (c << 8) | 0xFF & uint8(g)
   c = (c << 8) | 0xFF & uint8(b)
-  c = (c << 8) | 0xFF & uint8(a)
   return c
 }
 
 const hexDigits = '0123456789ABCDEF'
-export function toColorStr(colorNum: number) {
+export function toColorStr(rgbVal: number) {
   let s = ''
-  for (let i = 0; i < 8; i++) {
-    s = hexDigits[(colorNum & 0b1111)] + s
-    colorNum >>= 4
+  for (let i = 0; i < 6; i++) {
+    s = hexDigits[(rgbVal & 0b1111)] + s
+    rgbVal >>= 4
   }
   return `#${s}`
 }

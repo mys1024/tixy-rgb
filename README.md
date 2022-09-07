@@ -1,4 +1,4 @@
-# tixy-rgba
+# tixy-rgb
 
 Colorful lattice driven by (t, i, x, y).
 
