@@ -1,4 +1,4 @@
-import type { TixyFn } from '~/type'
+import type { TixyFn } from '~/types'
 
 export const fn: TixyFn = (t, i, x, y) => {
   const r = 128 + 128 * Math.sin(i + t / 100)

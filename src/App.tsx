@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js'
 import Renderer from '~/component/Renderer'
 import Footer from '~/component/Footer'
-import type { TixyFnModule } from '~/type'
+import type { TixyFnModule } from '~/types'
 
 const tixyFnModules: TixyFnModule[] = []
 for await (const module of Object.values(import.meta.glob<TixyFnModule>('~/fn/*.tsx')).map(i => i()))
