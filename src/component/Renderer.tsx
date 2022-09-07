@@ -2,35 +2,30 @@ import type { Accessor, Component } from 'solid-js'
 import { For, createMemo, createSignal } from 'solid-js'
 
 import type { TixyFn } from '~/type'
+import { delay, toColorNum, toColorStr } from '~/util'
 
-function uint8(num: number) {
-  num %= 256
-  return Math.floor(num < 0 ? num + 256 : num)
-}
-
-function useTimestamp(interval = 13) {
+function useTimestamp(updateInterval = 0) {
   const start = Date.now()
   const [now, setNow] = createSignal(start)
-  setInterval(() => {
+  const update = async () => {
     setNow(Date.now())
-  }, interval)
+    await delay(updateInterval)
+    requestAnimationFrame(update)
+  }
+  requestAnimationFrame(update)
   return { start, now, setNow }
 }
 
 function useColors(tixyFn: Accessor<TixyFn>, row = 16, col = 16) {
-  const { start, now } = useTimestamp()
+  const { start, now } = useTimestamp(40)
   const t = () => now() - start
   const count = row * col
   const colors: Accessor<string>[] = new Array(count)
   for (let i = 0; i < count; i++) {
     const x = i % col
     const y = Math.floor(i / col)
-    colors[i] = createMemo(
-      () => {
-        const [r, g, b, a] = tixyFn()(t(), i, x, y)
-        return `rgba(${uint8(r)},${uint8(g)},${uint8(b)},${uint8(a) / 255})`
-      },
-    )
+    const colorNum = createMemo(() => toColorNum(tixyFn()(t(), i, x, y)))
+    colors[i] = createMemo(() => toColorStr(colorNum()))
   }
   return colors
 }
