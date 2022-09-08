@@ -27,7 +27,8 @@ export default (props: { code: string }) => (
     max-w-full min-h-1em p-4
     font-mono whitespace-pre overflow-auto
     outline="none hover:none"
-    contenteditable
+    // @ts-expect-error experimental feature
+    contenteditable="plaintext-only"
     onKeyDown={handleKeyDown}
     onInput={handleInput}
   >
