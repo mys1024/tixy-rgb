@@ -1,26 +1,20 @@
-import { uint8 } from '~/util/plain'
-
 export function rgb(r: number, g: number, b: number): number {
-  let c = 0xFF & uint8(r)
-  c = (c << 8) | 0xFF & uint8(g)
-  c = (c << 8) | 0xFF & uint8(b)
-  return c
+  return [r, g, b].reduce((acc, cur) => (acc << 8) | 0xFF & cur, 0)
 }
 
 export function rgb01(r: number, g: number, b: number): number {
-  return rgb(256 * r, 256 * g, 256 * b)
+  return rgb(255 * r, 255 * g, 255 * b)
 }
 
 export function rgbPm1(r: number, g: number, b: number): number {
-  return rgb(128 + 128 * r, 128 + 128 * g, 128 + 128 * b)
+  return rgb01((r + 1) / 2, (g + 1) / 2, (b + 1) / 2)
 }
 
-const hexDigits = '0123456789ABCDEF'
-export function toColorStr(rgbVal: number): string {
-  let s = ''
-  for (let i = 0; i < 6; i++) {
-    s = hexDigits[(rgbVal & 0b1111)] + s
-    rgbVal >>= 4
-  }
-  return `#${s}`
+const hexDigits = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67, 68, 69, 70]
+const textDecoder = new TextDecoder()
+const textBuffer = new Uint8Array([35, 0, 0, 0, 0, 0, 0])
+export function toColorStr(rgb: number): string {
+  for (let i = 6; i >= 1; i--, rgb >>= 4)
+    textBuffer[i] = hexDigits[rgb & 0xF]
+  return textDecoder.decode(textBuffer)
 }
