@@ -1,11 +1,4 @@
-export async function delay(time: number) {
-  return new Promise<void>(resolve => setTimeout(() => resolve(), time))
-}
-
-export function uint8(num: number) {
-  num %= 256
-  return Math.floor(num < 0 ? num + 256 : num)
-}
+import { uint8 } from '~/util/plain'
 
 export function rgb(r: number, g: number, b: number): number {
   let c = 0xFF & uint8(r)
@@ -30,13 +23,4 @@ export function toColorStr(rgbVal: number) {
     rgbVal >>= 4
   }
   return `#${s}`
-}
-
-export function ignoreError<T>(fn: () => T): T | undefined {
-  try {
-    return fn()
-  }
-  catch (err) {
-    return undefined
-  }
 }

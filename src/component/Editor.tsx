@@ -1,4 +1,4 @@
-import { ignoreError } from '~/util/index'
+import { ignoreError } from '~/util/plain'
 import { isTixyFn } from '~/util/type'
 import { useTixyFn } from '~/store/fn'
 

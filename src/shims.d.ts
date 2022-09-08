@@ -1,5 +1,5 @@
 import type { AttributifyAttributes } from '@unocss/preset-attributify'
-import type { rgb as _rgb, rgb01 as _rgb01, rgbPm1 as _rgbPm1} from '~/util'
+import type { rgb as _rgb, rgb01 as _rgb01, rgbPm1 as _rgbPm1} from '~/util/color'
 
 declare module 'solid-js' {
   namespace JSX {

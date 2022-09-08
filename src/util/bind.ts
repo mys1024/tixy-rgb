@@ -1,4 +1,4 @@
-import { rgb, rgb01, rgbPm1 } from '~/util'
+import { rgb, rgb01, rgbPm1 } from '~/util/color'
 
 export function bindUsefulVariables(obj: any) {
   obj.PI = Math.PI

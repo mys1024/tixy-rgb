@@ -1,7 +1,7 @@
 import type { Accessor } from 'solid-js'
 import { For, createMemo, createSignal } from 'solid-js'
-
-import { delay, toColorStr } from '~/util'
+import { delay } from '~/util/plain'
+import { toColorStr } from '~/util/color'
 import { useTixyFn } from '~/store/fn'
 
 function useTimestamp(updateInterval = 0) {
