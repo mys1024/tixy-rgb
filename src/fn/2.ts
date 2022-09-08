@@ -10,7 +10,7 @@ export const fn: TixyFn = (t, i, x, y) => {
   )
 }
 
-export const intro = `(t, i, x, y) => {
+export const code = `(t, i, x, y) => {
   const p = (a, b) =>
     hypot(x - a, y) / 5 + b * PI / 2 - t / 500
   return rgbPm1(

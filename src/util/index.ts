@@ -31,3 +31,12 @@ export function toColorStr(rgbVal: number) {
   }
   return `#${s}`
 }
+
+export function ignoreError<T>(fn: () => T): T | undefined {
+  try {
+    return fn()
+  }
+  catch (err) {
+    return undefined
+  }
+}

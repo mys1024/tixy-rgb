@@ -8,7 +8,7 @@ export const fn: TixyFn = (t, i, x, y) => {
   return rgb(r, g, b)
 }
 
-export const intro = `(t, i, x, y) => {
+export const code = `(t, i, x, y) => {
   const p = 0.1 * (x + y) - t / 250
   const r = 128 + 128 * sin(p)
   const g = 128 + 128 * sin(p + PI / 2)
