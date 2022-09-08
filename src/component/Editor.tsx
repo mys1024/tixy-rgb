@@ -1,3 +1,4 @@
+import { createEffect } from 'solid-js'
 import { ignoreError } from '~/util/plain'
 import { isTixyFn } from '~/util/type'
 import { useFnStore } from '~/store/fn'
@@ -22,16 +23,19 @@ function handleInput(event: InputEvent) {
   setActiveFn(() => fn)
 }
 
-export default (props: { code: string }) => (
-  <div
-    max-w-full min-h-1em p-4
-    font-mono whitespace-pre overflow-auto
-    outline="none hover:none"
-    // @ts-expect-error experimental feature
-    contenteditable="plaintext-only"
-    onKeyDown={handleKeyDown}
-    onInput={handleInput}
-  >
-    {props.code}
-  </div>
-)
+export default (props: { code: string }) => {
+  const editor = (
+    <div
+      max-w-full min-h-1em p-4
+      font-mono whitespace-pre overflow-auto
+      outline="none hover:none"
+      // @ts-expect-error experimental feature
+      contenteditable="plaintext-only"
+      onKeyDown={handleKeyDown}
+      onInput={handleInput}
+    />
+  ) as HTMLDivElement
+  // this awkward code is written on purpose to adapt attr `contenteditable`
+  createEffect(() => editor.textContent = props.code)
+  return editor
+}
