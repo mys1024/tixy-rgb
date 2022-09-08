@@ -15,3 +15,10 @@ export function ignoreError<T>(fn: () => T): T | undefined {
     return undefined
   }
 }
+
+export function sum(nums: number[]) {
+  let s = 0
+  for (const num of nums)
+    s += num
+  return s
+}

@@ -1,17 +1,15 @@
 import type { TixyFn } from '~/types'
 
 export const fn: TixyFn = (t, i, x, y) => {
-  const p = 0.1 * (x + y) - t / 250
-  const r = 128 + 128 * sin(p)
-  const g = 128 + 128 * sin(p + PI / 2)
-  const b = 128 + 128 * sin(p + PI)
-  return rgb(r, g, b)
+  const w = (a: number) => 128 + 128 * sin(
+    0.1 * (x + y) + a * PI / 2 - t / 250,
+  )
+  return rgb(w(0), w(1), w(2))
 }
 
 export const code = `(t, i, x, y) => {
-  const p = 0.1 * (x + y) - t / 250
-  const r = 128 + 128 * sin(p)
-  const g = 128 + 128 * sin(p + PI / 2)
-  const b = 128 + 128 * sin(p + PI)
-  return rgb(r, g, b)
+  const w = a => 128 + 128 * sin(
+    0.1 * (x + y) + a * PI / 2 - t / 250,
+  )
+  return rgb(w(0), w(1), w(2))
 }`

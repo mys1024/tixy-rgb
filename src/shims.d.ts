@@ -1,5 +1,5 @@
 import type { AttributifyAttributes } from '@unocss/preset-attributify'
-import type { uint8 as _uint8 } from '~/util/plain'
+import type { uint8 as _uint8, sum as _sum } from '~/util/plain'
 import type { rgb as _rgb, rgb01 as _rgb01, rgbPm1 as _rgbPm1 } from '~/util/color'
 
 declare module 'solid-js' {
@@ -10,10 +10,12 @@ declare module 'solid-js' {
 
 declare global {
   // color
-  const uint8: typeof _uint8
   const rgb: typeof _rgb
   const rgb01: typeof _rgb01
   const rgbPm1: typeof _rgbPm1
+  // util
+  const uint8: typeof _uint8
+  const sum: typeof _sum
   // Math
   const E: typeof Math.E
   const LN2: typeof Math.LN2
