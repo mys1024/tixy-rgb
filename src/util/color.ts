@@ -16,7 +16,7 @@ export function rgbPm1(r: number, g: number, b: number): number {
 }
 
 const hexDigits = '0123456789ABCDEF'
-export function toColorStr(rgbVal: number) {
+export function toColorStr(rgbVal: number): string {
   let s = ''
   for (let i = 0; i < 6; i++) {
     s = hexDigits[(rgbVal & 0b1111)] + s

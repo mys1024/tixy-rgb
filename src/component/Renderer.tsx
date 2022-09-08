@@ -2,7 +2,7 @@ import type { Accessor } from 'solid-js'
 import { For, createMemo, createSignal } from 'solid-js'
 import { delay } from '~/util/plain'
 import { toColorStr } from '~/util/color'
-import { useTixyFn } from '~/store/fn'
+import { useFnStore } from '~/store/fn'
 
 function useTimestamp(updateInterval = 0) {
   const start = Date.now()
@@ -17,7 +17,7 @@ function useTimestamp(updateInterval = 0) {
 }
 
 function useColors(row = 16, col = 16) {
-  const { fn } = useTixyFn()
+  const { activeFn } = useFnStore()
   const { start, now } = useTimestamp(40)
   const t = () => now() - start
   const count = row * col
@@ -25,8 +25,8 @@ function useColors(row = 16, col = 16) {
   for (let i = 0; i < count; i++) {
     const x = i % col
     const y = Math.floor(i / col)
-    const colorNum = createMemo(() => fn()(t(), i, x, y))
-    colors[i] = createMemo(() => toColorStr(colorNum()))
+    const color = () => activeFn()(t(), i, x, y)
+    colors[i] = createMemo(() => toColorStr(color()))
   }
   return colors
 }

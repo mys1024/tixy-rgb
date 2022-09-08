@@ -1,23 +1,20 @@
 import { createEffect, createSignal } from 'solid-js'
+import type { TixyFnModule } from '~/types'
+import { useFnStore } from '~/store/fn'
 import Renderer from '~/component/Renderer'
 import Editor from '~/component/Editor'
 import Footer from '~/component/Footer'
-import type { TixyFnModule } from '~/types'
-import { useTixyFn } from '~/store/fn'
 
-const tixyFnModules: TixyFnModule[] = []
-for await (const module of Object.values(import.meta.glob<TixyFnModule>('~/fn/*.ts')).map(i => i()))
-  tixyFnModules.push(module)
-
+const tixyFnModules = Object.values(import.meta.glob<TixyFnModule>('~/fn/*.ts', { eager: true }))
 const [idx, setIdx] = createSignal(0)
-const toggle = () => setIdx((idx() + 1) % tixyFnModules.length)
 const module = () => tixyFnModules[idx()]
+const toggle = () => setIdx((idx() + 1) % tixyFnModules.length)
 
-const { setFn } = useTixyFn()
+const { setActiveFn } = useFnStore()
 
 export default () => {
   // eslint-disable-next-line solid/reactivity
-  createEffect(() => setFn(() => module().fn))
+  createEffect(() => setActiveFn(() => module().fn))
   return (
     <div
       min-h-100vh

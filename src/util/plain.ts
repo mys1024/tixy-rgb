@@ -16,7 +16,7 @@ export function ignoreError<T>(fn: () => T): T | undefined {
   }
 }
 
-export function sum(nums: number[]) {
+export function sum(nums: number[]): number {
   let s = 0
   for (const num of nums)
     s += num

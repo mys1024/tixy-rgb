@@ -1,8 +1,8 @@
 import { ignoreError } from '~/util/plain'
 import { isTixyFn } from '~/util/type'
-import { useTixyFn } from '~/store/fn'
+import { useFnStore } from '~/store/fn'
 
-const { setFn } = useTixyFn()
+const { setActiveFn } = useFnStore()
 
 function handleKeyDown(event: KeyboardEvent) {
   switch (event.key) {
@@ -19,7 +19,7 @@ function handleInput(event: InputEvent) {
   const fn = ignoreError(() => eval(code))
   if (!isTixyFn(fn))
     return
-  setFn(() => fn)
+  setActiveFn(() => fn)
 }
 
 export default (props: { code: string }) => (

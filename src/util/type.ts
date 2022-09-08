@@ -5,7 +5,7 @@ export function isTixyFn(fn: unknown): fn is TixyFn {
     return false
   try {
     if (
-      typeof fn(1, 2, 3, 4) !== 'number'
+      typeof fn(1, 17, 1, 2) !== 'number'
         || typeof fn(255, 6, 6, 0) !== 'number'
         || typeof fn(0, 8, 0, 1) !== 'number'
     )

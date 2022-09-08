@@ -1,7 +1,7 @@
 import { sum, uint8 } from '~/util/plain'
 import { rgb, rgb01, rgbPm1 } from '~/util/color'
 
-export function bindUsefulVariables(obj: any) {
+export function bindUsefulVariables(obj: any): void {
   // color
   obj.rgb = rgb
   obj.rgb01 = rgb01

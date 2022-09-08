@@ -1,5 +1,4 @@
 import { render } from 'solid-js/web'
-
 import { bindUsefulVariables } from '~/util/bind'
 import App from '~/App'
 
