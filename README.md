@@ -1,8 +1,6 @@
 # tixy-rgb
 
-<p align="center">
-  <img alt="Colorful lattice" src="./screenshot/main.gif" width="480">
-</p>
+![Colorful lattice](./screenshot/main.gif)
 
 Colorful lattice driven by (t, i, x, y).
 
