@@ -1,8 +1,12 @@
 # tixy-rgb
 
+<p align="center">
+  <img alt="Colorful lattice" src="./screenshot/main.gif" width="480">
+</p>
+
 Colorful lattice driven by (t, i, x, y).
 
-Enjoy it: [tixy.1024.cab](https://tixy.1024.cab/)
+Have fun: [tixy.1024.cab](https://tixy.1024.cab/)
 
 ## Credit
 
