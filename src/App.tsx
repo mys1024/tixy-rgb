@@ -27,7 +27,7 @@ export default () => {
         flex flex-col
         items-center
       >
-        <div onClick={toggle}>
+        <div cursor-pointer onClick={toggle}>
           <Renderer />
         </div>
         <div>
