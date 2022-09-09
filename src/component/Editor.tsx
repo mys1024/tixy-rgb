@@ -26,7 +26,7 @@ function handleInput(event: InputEvent) {
 export default (props: { code: string }) => {
   const editor = (
     <div
-      max-w-full min-h-1em p-4
+      max-w-80vw min-h-1em p-4
       font-mono whitespace-pre overflow-auto
       outline="none hover:none"
       // @ts-expect-error experimental feature
