@@ -2,7 +2,7 @@
 
 ![Colorful lattice](./screenshot/main.gif)
 
-Colorful lattice driven by (t, i, x, y).
+A colorful lattice driven by (t, i, x, y).
 
 Have fun: [tixy.1024.cab](https://tixy.1024.cab/)
 
